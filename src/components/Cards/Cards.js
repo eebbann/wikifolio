@@ -31,7 +31,7 @@ const Cards = ({ results }) => {
 				 })()}
 				</div>
 			);
-		});
+		}); 
 	} else {
 		display = "No results found";
 	}
