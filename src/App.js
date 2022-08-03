@@ -34,7 +34,7 @@ function App(){
 	)
 }
 
-const Home = ()=>{
+export const Home = ()=>{
 	let [pageNumber, setPageNumber] = useState(1);
 	let [search, setSearch] = useState(" ");
 	let [status, setStatus] = useState(" ");

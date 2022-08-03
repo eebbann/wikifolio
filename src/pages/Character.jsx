@@ -1,7 +1,10 @@
 import React from "react";
+import { Home } from "../App";
 
 function Character() {
-	return <div>Character</div>;
+	return <div>
+		<Home />
+	</div>;
 }
 
 export default Character;

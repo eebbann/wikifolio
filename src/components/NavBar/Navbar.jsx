@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "../../App.css"
+
 function Navbar() {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -8,7 +10,7 @@ function Navbar() {
 					<span className="text-primary">WiKiFolio</span>
 				</Link>
 				<button
-					className="navbar-toggler"
+					className="navbar-toggler "
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarNavAltMarkup"
@@ -18,21 +20,19 @@ function Navbar() {
 				>
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				{/* css */}
-				<style jsx>
-					
-				</style>
+				{/* css */} 
 				<div
 					className="collapse navbar-collapse justify-content-end"
 					id="navbarNavAltMarkup"
 				>
 					<div className="navbar-nav">
-						<NavLink to="character" className="nav-link" href="#">
+						<NavLink activeClassName="active" to="character" className="nav-link" href="#">
 							Character
 						</NavLink>
 						<NavLink to="episodes" className="nav-link" href="#">
 							Episodes
 						</NavLink>
+						 
 						<NavLink to="location" className="nav-link" href="#">
 							Location
 						</NavLink>

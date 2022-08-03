@@ -29,3 +29,10 @@
 	background-color: rgb(206, 206, 235) !important;
 	text-decoration: none;
  }
+
+ .active{
+	border-bottom: 3px solid #0b53d7;
+	font-weight:bolder;
+	color: #0b53d7
+ }
+ 
