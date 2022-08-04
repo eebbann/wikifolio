@@ -3,7 +3,7 @@ import Cards from "../components/Cards/Cards";
 import InputGroup from "../components/Filter/Category/InputGroup";
 
 function Episodes({ }) {
-	let [id, setID] = useState(2);
+	let [id, setID] = useState(1);
 	let [info, setInfo] = useState([]);
 	let { air_date, name } = info;
 	let [results, setResult] = useState([])
@@ -13,13 +13,12 @@ function Episodes({ }) {
 		(async function() {
 			let data = await fetch(api).then((res) => res.json());
 			setInfo(data);
-
+      console.log(data)
 			let a = await Promise.all(
 				data.characters.map((x)=>{
 					return fetch(x).then((res)=> res.json()) 
-					
-				})
-				
+
+				})  
 			)
 			console.log(data)
 			setResult(a)
@@ -36,13 +35,12 @@ function Episodes({ }) {
 			<div className="row">
 				<div className="col-3" >
 					<h4 className=" text-center mb-4"> Pick Episodes </h4>
-				<InputGroup />
+				<InputGroup setID={setID} name="episode" total={51}/>
 				 </div>
 				
 				<div className="col-8" >
 					<div className="row">
-					 
-						<Cards results={results}/> 
+						<Cards page="/episodes/" results={results}/> 
 						</div>
 				</div>
 			</div>

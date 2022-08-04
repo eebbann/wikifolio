@@ -1,12 +1,17 @@
 import React from "react";
 
-function InputGroup() {
+function InputGroup({ total, name, setID}) {
 	return (
 		<div class="input-group mb-3">
-			<select class="form-select" id="inputGroupSelect01">
+			<select onChange={(e) => setID(e.target.value)} class="form-select" id={name}>
 				<option selected>Choose Episode</option>
-				<option value="1">One</option>
-				 
+				{[...Array(total).keys()].map((x) => {
+					return (
+						<option value={x + 1}>
+							{name} - {x + 1}
+						</option>
+					);
+				})}
 			</select>
 		</div>
 	);

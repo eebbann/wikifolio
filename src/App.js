@@ -15,6 +15,7 @@ import {
 import Location from "./pages/Location";
 import Episodes from "./pages/Episodes";
 import Character from "./pages/Character";
+import CardDetails from "./components/Cards/CardDetails";
 
 function App(){
   return(
@@ -24,11 +25,14 @@ function App(){
 			<Navbar />
 			</div>
 		<Routes> 
-			<Route path="/"  element={<Home/>  }/>
+			<Route path="/"  element={<Home/> }/>
+			<Route path="/:id" element={<CardDetails />}/>
+		 
 			<Route path="location"  element={<Location/>  }/>
-			<Route path="episodes"  element={<Episodes />  }/>
-			<Route path="character"  element={<Character />  }/>
+			<Route path="/location/:id" element={<CardDetails />}/>
 
+			<Route path="episodes"  element={<Episodes />  }/>
+			<Route path="/episodes/:id" element={<CardDetails />}/> 
 		</Routes>
 		</BrowserRouter>
 	)
@@ -73,7 +77,7 @@ export const Home = ()=>{
 						<div className="container">
 							<Search setPageNumber={setPageNumber} setSearch={setSearch} />
 							<div className="row">
-								<Cards results={results} />
+								<Cards page="/" results={results} />
 							</div>
 						</div>
 					</div>

@@ -26,10 +26,10 @@ function Navbar() {
 					id="navbarNavAltMarkup"
 				>
 					<div className="navbar-nav">
-						<NavLink activeClassName="active" to="character" className="nav-link" href="#">
+						<NavLink activeClassName="active" to="/" className="nav-link" href="#">
 							Character
 						</NavLink>
-						<NavLink to="episodes" className="nav-link" href="#">
+						<NavLink to="/episodes" className="nav-link" href="#">
 							Episodes
 						</NavLink>
 						 
